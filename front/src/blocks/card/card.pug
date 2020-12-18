@@ -1,0 +1,12 @@
+mixin card(data)
+  .b-card&attributes(attributes)
+    a(href='./popup-product.html' data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false")._img-wrap: img(src=`./img/${data.img}` alt="")
+    ._panel
+      a(href='./popup-product.html' data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false")._name= data.name
+      ul._opt
+        li Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г
+        li Энергетическая ценность/калорийность: 1926 кДж/460 ккал.
+      a(href='./popup-product.html' data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false")._more.text-primary Подробнее  
+        <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
+        <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2"/>
+        </svg>

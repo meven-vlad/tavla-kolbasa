@@ -1,0 +1,55 @@
+.section {
+  
+  &__form{
+    max-width: 516px;
+  }
+  
+  &__bg-title{
+   
+    @include media-breakpoint-up(lg){
+      margin-left: -122px;
+      margin-right: -122px;
+      padding-left: 122px;
+      padding-right: 122px;
+      background-image: url(../img/list-bg.png);
+      background-repeat: no-repeat;
+      background-position: -200px -128px;
+    }
+    @include media-breakpoint-only(lg){
+      padding-top: 50px;
+    }
+  }
+  
+  &__img-fill{
+    width: 100%;
+    @include object-fit;
+    img{
+      border-radius: 16px;
+    }
+  }
+  &--leedform{
+    padding-bottom: 86px;
+    @include media-breakpoint-down(md){
+      padding-bottom: 60px;
+    }
+    @include media-breakpoint-down(sm){
+      padding-bottom: 40px;
+    }
+  }
+  
+  &--notepad{
+   
+    padding: 80px 0;
+    @include media-breakpoint-up(sm){
+      background-image: url(../img/bg-notepad.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    @include media-breakpoint-down(xs){
+      background-size: auto 100%;
+      padding: 40px 0;
+      background: $light;
+    }
+  }
+}

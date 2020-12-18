@@ -1,0 +1,10 @@
+{
+    "require": {
+        "arrilot/bitrix-migrations": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Meven\\": "src/"
+        }
+    }
+}

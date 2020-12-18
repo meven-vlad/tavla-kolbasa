@@ -1,0 +1,13 @@
+/.idea/
+/public/bitrix/
+/public/upload/
+/public/upload-old/
+/public/robots.txt
+/public/auth1.php
+/public/local/php_interface/iblocks_config.php
+/vendor/
+node_modules/
+*.zip
+*.log
+*.tar.gz
+*.xml

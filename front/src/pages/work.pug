@@ -1,0 +1,40 @@
+extends ../templates/layout
+block content
+  section.b-section.py-32.py-md-64.mb-md-44: .container
+    h1.h2.mb-24.mb-md-64 Трудоустройство
+    h3.mb-16.mb-md-32 Доступные вакансии:
+    .row
+      .col-lg-4.d-flex.flex-lg-column.overflow-auto
+        a(href="#").btn.btn--cv.is-active Колбасный дегустатор
+        a(href="#").btn.btn--cv Колбасный дегустатор
+        a(href="#").btn.btn--cv Менеджер сарделек и замороженной говядины
+        a(href="#").btn.btn--cv Колбасный дегустатор
+        a(href="#").btn.btn--cv Колбасный дегустатор
+        .px-8.d-lg-none
+      .col-lg-8.d-flex: .panel
+        h4 Вакансия колбасного дегустатора
+        br
+        p.
+          Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+          <br> <br>
+          Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём.
+          <br> <br>
+          Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца.
+  section.b-section.-leedform: .container: .row.align-items-center
+    .col-12
+      h3.mb-8 Хотите работать с нами?
+    .col-md-6.mb-32.mb-md-0
+      form(action="" method="")._form
+        p.mb-24.mb-md-48 Оставьте свои контактные данные, чтобы мы могли с вами связаться
+        .form-group
+          input.form-control(name="name" placeholder="Ваше имя" required)
+        .form-group
+          input.form-control(name="email" type="email" placeholder="E-mail" required)
+        .form-group
+          textarea.form-control(name="msg" placeholder="Текст сообщения")
+        .custom-control.custom-checkbox
+          input.custom-control-input#cc1(type="checkbox" required)
+          label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+        button(type="submit").btn.btn-primary Отправить
+    .col-md-6: img(src="./img/img-11.jpg" alt="")
+  

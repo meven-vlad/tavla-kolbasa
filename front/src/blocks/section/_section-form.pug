@@ -1,0 +1,15 @@
+section.b-section.-leedform: .container: .row.align-items-center
+  .col-12
+    h2.mb-8.mb-lg-0 Остались вопросы?
+  .col-md-6.mb-32.mb-md-0
+    form(action="" method="")._form
+      p.mb-24.mb-md-48 Оставьте свои контактные данные, и наш менеджер свяжется с вами в ближайшее время
+      .form-group
+        input.form-control(name="name" placeholder="Ваше имя" required)
+      .form-group
+        input.form-control(name="tel" type="tel" placeholder="Телефон" required data-inputmask="'mask': '+7(999)999-99-99','clearIncomplete':'true'")
+      .custom-control.custom-checkbox
+        input.custom-control-input#cc1(type="checkbox" required)
+        label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+      button(type="submit" onclick="popupAjax('./popup-thx.html')").btn.btn-primary Отправить
+  .col-md-6: img(src="./img/img-1.jpg" alt="")

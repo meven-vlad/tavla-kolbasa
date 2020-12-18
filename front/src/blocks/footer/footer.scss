@@ -1,0 +1,41 @@
+.footer {
+  border-top: 1px solid #E9E9E9;
+  padding: 16px 0;
+  @include media-breakpoint-down(sm){
+    background-color: $light;
+  }
+  &__logo{
+    display: inline-block;
+    width: 188px;
+    margin-right: 68px;
+    @include media-breakpoint-down(lg){
+      margin-right: 30px;
+    }
+    
+  }
+  
+  &__logo-wrap{
+    margin-right: 130px;
+    @include media-breakpoint-down(lg){
+      margin-right: auto;
+    }
+    @include media-breakpoint-down(sm){
+      justify-content: center;
+    }
+  }
+  &__contacts{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include media-breakpoint-down(xs){
+      width: 230px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    a{
+      color: inherit;
+    }
+  }
+}

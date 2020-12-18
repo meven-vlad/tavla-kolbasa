@@ -1,0 +1,25 @@
+@import "utilites";
+@import "bootstrap";
+@import "my-reset";
+@import "bootstrap-custom";
+@import "global";
+@import "typography";
+
+@import "plugins/jquery.fancybox_fix";
+@import "plugins/tiny-slider";
+@import "plugins/rewrite-plugins";
+
+@import '../blocks/footer/footer';
+@import '../blocks/header/header';
+
+@import '../blocks/carousel/carousel';
+@import '../blocks/section/section';
+@import '../blocks/privilege/privilege';
+@import '../blocks/front/front';
+@import '../blocks/menu/menu';
+@import '../blocks/card/card';
+@import '../blocks/panel/panel';
+@import '../blocks/map/map';
+@import '../blocks/worker/worker';
+@import '../blocks/product/product';
+@import '../blocks/popup/popup';

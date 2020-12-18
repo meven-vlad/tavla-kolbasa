@@ -1,0 +1,74 @@
+extends ../templates/layout
+block header
+  +header.header--home
+block content
+  
+  include ../blocks/front/_front
+  
+  section.b-section.w-100.overflow-hidden.mb-24.mb-lg-92#about: .container
+    ._bg-title
+      .row.align-items-center.mb-40
+        .col-lg-6.mb-36
+          h2.mb-24.mb-xl-40 О бренде
+          p.mb-0.
+            Мы в компании «Агрика» после 13 лет успешной работы на колбасном рынке в качестве дистрибьютора различных марок и производителей решили в дополнение заняться изготовлением собственной мясной и колбасной продукции.
+        .col-lg-6.text-center: img(src="./img/img-2.jpg" alt="")
+    .row.align-items-center.mb-40.mb-lg-128
+      .col-lg-6.text-center.order-1.order-lg-0: img(src="./img/img-3.jpg" alt="")
+      .col-lg-6.mb-36
+        h2.mb-24.mb-xl-40 Наш опыт
+        p.mb-0.
+          Используя свой опыт, мы делаем продукцию под торговой маркой «Тавла». Производство осуществляется ООО «Араповская мясная мануфактура», входящим в группу компаний ООО «Агрика». Производство расположено в городе Ковылкино Республики Мордовия.
+    .row
+      .col-md-6.col-lg-3.pb-40.d-flex: +privilege({
+        icon: 'p-1.svg',
+        title: 'Миссия компании',
+        text: 'Улучшение качества жизни'
+      })
+      .col-md-6.col-lg-3.pb-40.d-flex: +privilege({
+        icon: 'p-2.svg',
+        title: 'Стратегия',
+        text: 'Делать продукт с качеством немного выше цены'
+      })
+      .col-md-6.col-lg-3.pb-40.d-flex: +privilege({
+        icon: 'p-3.svg',
+        title: 'Принципы',
+        text: 'Развитие, улучшение, доступность'
+      })
+      .col-md-6.col-lg-3.pb-40.d-flex: +privilege({
+        icon: 'p-4.svg',
+        title: 'Ценности',
+        text: 'Человек, его потребности и безопасность'
+      })
+  
+  
+  section.b-section.mb-48.mb-md-64.mb-lg-112: .container
+    h2.text-center.mb-24.mb-md-32 Каталог
+    .b-carousel
+      .js-carousel-card
+        ._item: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        ._item: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        ._item: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        ._item: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        ._item: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        ._item: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+  include ../blocks/section/_section-form
+    

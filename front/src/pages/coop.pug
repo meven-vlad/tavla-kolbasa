@@ -1,0 +1,29 @@
+extends ../templates/layout
+block content
+  section.b-section.py-32.py-md-64.mb-md-44: .container
+    h1.h2.mb-24.mb-md-32 Сотрудничество с нами
+    .row.justify-content-between
+      .col-lg-6.pb-40
+        p.mb-24.mb-md-64.
+          ООО «Араповская мясная мануфактура» приглашает к сотрудничеству хозяйствующие субъекты как в качестве поставщиков, так и в качестве покупателей нашей продукции.
+          <br> <br>
+          Мы постоянно заинтересованы в приобретении мяса свинины и говядины, куриного мяса, проч., а также специй и оболочек. Рассмотрим предложения от производителей и поставщиков упаковки и этикеток.
+          <br> <br>
+          Также мы приглашаем к сотрудничеству по реализации нашей продукции на достойных взаимовыгодных условиях.
+          <br> <br>
+          В любом сотрудничестве мы нацелены на результат. 
+          <br>
+          Будем рады Вашему вниманию к нашей компании.
+        form(action="" method="")._form
+          .form-group
+            input.form-control(name="name" placeholder="Ваше имя" required)
+          .form-group
+            input.form-control(name="email" type="email" placeholder="E-mail" required)
+          .form-group
+            textarea.form-control(name="msg" placeholder="Текст сообщения")
+          .custom-control.custom-checkbox
+            input.custom-control-input#cc1(type="checkbox" required)
+            label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+          button(type="submit").btn.btn-primary Отправить
+      .col-lg-6.text-center.text-lg-right: img(src="./img/cat.jpg" alt="")
+  

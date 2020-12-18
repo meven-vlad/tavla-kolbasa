@@ -1,0 +1,97 @@
+.front {
+  position: relative;
+  margin-bottom: 100px;
+  @include media-breakpoint-down(md){
+    margin-bottom: 50px;
+  }
+  @include media-breakpoint-down(sm){
+    margin-bottom: 40px;
+  }
+  &__slide{
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 30vh;
+    color: #fff;
+    min-height: 560px;
+    @include media-breakpoint-down(sm){
+      height: 500px;
+      padding-top: 100px;
+      min-height: 0;
+    }
+    @include media-breakpoint-down(xs){
+      height: 370px;
+    }
+  }
+  
+  &__content{
+    max-width: 808px;
+    
+  }
+  
+  &__scroll{
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-weight: bold;
+    transition: $transition-base;
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
+    svg{
+      margin-top: 16px;
+      transition: $transition-base;
+    }
+    
+    &:hover{
+      text-decoration: none;
+      color: #fff;
+      svg{
+        transform: translateY(10px);
+      }
+    }
+  }
+  
+  &__nav{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 130px;
+    left: 12px;
+    @include media-breakpoint-down(lg){
+      bottom: 40px;
+    }
+    @include media-breakpoint-down(sm){
+      bottom: 20px;
+      justify-content: center;
+      width: 100%;
+      left: 0;
+    }
+    button{
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin-right: 16px;
+      background: $secondary;
+      @include media-breakpoint-down(sm){
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &.tns-nav-active{
+        background: #fff;
+      }
+    }
+  }
+}

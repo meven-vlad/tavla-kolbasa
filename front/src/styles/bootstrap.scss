@@ -1,0 +1,205 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/variables";
+
+// ------------GRID------------
+$grid-columns: 12;
+$grid-gutter-width: 24px;
+$grid-breakpoints: (
+				xs: 0,
+				sm: 576px,
+				md: 768px,
+				lg: 992px,
+				xl: 1200px
+);
+$container-max-widths: (
+				sm: 540px,
+				md: 740px,
+				lg: 960px,
+				xl: 1294px
+);
+// ------------SPACER---------
+//$spacer: 10px;
+//$spacers: (
+//				0: 0,
+//				5: ($spacer * .5),
+//				10: $spacer,
+//				15: ($spacer * 1.5),
+//				20: ($spacer * 2),
+//				25: ($spacer * 2.5),
+//				30: ($spacer * 3),
+//				35: ($spacer * 3.5),
+//				40: ($spacer * 4),
+//				45: ($spacer * 4.5),
+//				50: ($spacer * 5),
+//				55: ($spacer * 5.5),
+//				60: ($spacer * 6),
+//				65: ($spacer * 6.5),
+//				70: ($spacer * 7),
+//				75: ($spacer * 7.5),
+//				80: ($spacer * 8),
+//				85: ($spacer * 8.5),
+//				90: ($spacer * 9),
+//				95: ($spacer * 9.5),
+//				100: ($spacer * 10)
+//);
+$spacer: 8px;
+$spacers: (
+  0: 0,
+  4: ($spacer * .5),
+  8: $spacer,
+  12: ($spacer * 1.5),
+  16: ($spacer * 2),
+  20: ($spacer * 2.5),
+  24: ($spacer * 3),
+  28: ($spacer * 3.5),
+  32: ($spacer * 4),
+  36: ($spacer * 4.5),
+  40: ($spacer * 5),
+  44: ($spacer * 5.5),
+  48: ($spacer * 6),
+  52: ($spacer * 6.5),
+  56: ($spacer * 7),
+  60: ($spacer * 7.5),
+  64: ($spacer * 8),
+  68: ($spacer * 8.5),
+  72: ($spacer * 9),
+  76: ($spacer * 9.5),
+  80: ($spacer * 10),
+  84: ($spacer * 10.5),
+  88: ($spacer * 11),
+  92: ($spacer * 11.5),
+  96: ($spacer * 12),
+  100: ($spacer * 12.5),
+  104: ($spacer * 13),
+  108: ($spacer * 13.5),
+  112: ($spacer * 14),
+  116: ($spacer * 14.5),
+  120: ($spacer * 15),
+  128: ($spacer * 16),
+);
+// ------------VARIABLES-------
+
+//colors
+$colors: ();
+
+$colors: map-merge(
+		(
+						//"blue":       $blue,
+						//"indigo":     $indigo,
+						//"purple":     $purple,
+						//"pink":       $pink,
+						//"red":        $red,
+						//"orange":     $orange,
+						//"yellow":     $yellow,
+						//"green":      $green,
+						//"teal":       $teal,
+						//"cyan":       $cyan,
+						//"white":      $white,
+						//"gray":       $gray-600,
+						//"gray-dark":  $gray-800
+		),
+		$colors
+);
+
+$primary:       #54A02F;
+$secondary:     #838383;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         #F1F1F1;
+$dark:          $gray-800;
+
+$border-color: #CFCFCF;
+
+$theme-colors: ();
+
+$theme-colors: map-merge(
+		(
+						"primary":    $primary,
+						"secondary":  $secondary,
+						//"success":    $success,
+						//"info":       $info,
+						//"warning":    $warning,
+						//"danger":     $danger,
+						//"light":      $light,
+						//"dark":       $dark
+		),
+		$theme-colors
+);
+
+//global
+$body-bg: $white;
+$body-color: #292929;
+$line-height-sm: 1;
+$line-height-lg: 1.4;
+
+//fonts
+$font-family-base: 'Montserrat',sans-serif;
+
+//text
+$text-muted: #8b8b8b;
+
+//link
+$link-color:                              $body-color;
+$link-decoration:                         none;
+$link-hover-color:                        darken($link-color, 15%);
+$link-hover-decoration:                   underline;
+$emphasized-link-hover-darken-percentage: 15%;
+
+
+//transition
+$transition-base: .3s cubic-bezier(.25, .1, .25, 1);
+$transition-fade: opacity .15s linear;
+$transition-collapse: height .35s ease;
+
+//inputs
+$input-focus-box-shadow: none;
+$input-focus-border-color: init;
+$input-box-shadow: none;
+$input-border-color: $border-color;
+$input-height: 48px;
+$input-border-radius: 8px;
+
+$custom-control-indicator-size: 1.25rem;
+$custom-checkbox-indicator-indeterminate-border-color: $border-color;
+$custom-checkbox-indicator-border-radius: 4px;
+$custom-control-indicator-checked-bg: $primary;
+
+$custom-select-border-radius: $input-border-radius;
+$custom-select-height: $input-height;
+$custom-select-border-color: $input-border-color;
+$custom-select-focus-box-shadow: none;
+$custom-select-focus-border-color: init;
+
+//button
+$btn-active-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-box-shadow: none;
+$btn-line-height: 34px;
+$btn-font-weight: bold;
+$btn-border-radius: 24px;
+$btn-padding-x: 32px;
+//border
+$border-width: 1px;
+$border-radius: .25rem;
+$border-radius-lg: .3rem;
+$border-radius-sm: .2rem;
+
+
+$rounded-pill:  50rem;
+
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+$box-shadow:    0 .5rem 1rem rgba($black, .15);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+
+
+//modules
+@import '../../node_modules/bootstrap/scss/reboot';
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/custom-forms";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/utilities";

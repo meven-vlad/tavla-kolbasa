@@ -1,0 +1,56 @@
+.header {
+  position: relative;
+  z-index: 10;
+  @include media-breakpoint-down(sm){
+    background: $primary;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+  &__logo{
+    display: inline-block;
+    width: 170px;
+    margin-right: 50px;
+    @include media-breakpoint-down(lg){
+      margin-right: auto;
+    }
+    @include media-breakpoint-down(md){
+      width: 130px;
+    }
+    @include media-breakpoint-down(sm){
+      width: 80px;
+    }
+  }
+  &__row{
+    display: flex;
+    align-items: center;
+    height: 120px;
+    @include media-breakpoint-down(lg){
+      height: 100px;
+    }
+    @include media-breakpoint-down(md){
+      height: 80px;
+    }
+    @include media-breakpoint-down(sm){
+      height: 60px;
+    }
+  }
+  
+  &__contacts{
+    a{
+      color: inherit;
+      transition: $transition-base;
+      
+      &:hover{
+        color: $primary;
+        text-decoration: none;
+      }
+    }
+  }
+  &--home{
+    @include media-breakpoint-up(md){
+      height: 0;
+      color: #fff;
+    }
+  }
+}

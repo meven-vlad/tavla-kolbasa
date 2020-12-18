@@ -1,0 +1,5 @@
+mixin privilege(data)
+  .b-privilege&attributes(attributes)
+    img._ic.mb-16(src=`./img/${data.icon}` alt="")
+    ._title.h4.mb-8= data.title
+    ._text= data.text

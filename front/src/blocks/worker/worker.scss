@@ -1,0 +1,10 @@
+.worker {
+  padding: 24px;
+  width: 100%;
+  border-radius: 16px;
+  background: $light;
+  
+  &__photo{
+    border-radius: 8px;
+  }
+}

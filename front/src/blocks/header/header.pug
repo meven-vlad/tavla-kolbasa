@@ -1,0 +1,11 @@
+mixin header(data)
+  header.b-header&attributes(attributes): .container
+    ._row
+      a(href="#menu" data-fancybox data-touch="false" data-slide-class="fancybox-menu").btn.btn--menu.mr-20.mr-sm-24.d-xl-none
+      a(href="./")._logo: img(src="./img/logo@2x.png" alt="")
+      .flex-grow-1.d-none.d-xl-block: +menu
+      ._contacts.mr-md-20
+        a(href="tel:88342777454").font-weight-bold 8 (8342) 777-454
+        br
+        a(href="mailto:agr.office@yandex.ru") agr.office@yandex.ru
+      a(href='./popup-callme.html' data-fancybox data-type="ajax" data-touch="false").btn.btn-primary.px-24.d-none.d-md-inline-block Получить прайс-лист

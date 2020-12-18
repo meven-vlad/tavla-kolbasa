@@ -1,0 +1,81 @@
+extends ../templates/layout
+block content
+  section.b-section.py-32.py-md-64.mb-md-44: .container
+    .row
+      .col-lg-3.pb-32.pb-lg-24: .position-sticky(style="top: 30px")
+        h1.h4.text-secondary.mb-20.mb-xl-36 Категории
+        .row.mx-n8.mx-lg-0.flex-lg-column.pb-lg-32
+          a(href="#").btn.btn--filter.mb-16.mx-8.mx-lg-0.is-active Все
+          a(href="#").btn.btn--filter.mb-16.mx-8.mx-lg-0 Колбасная продукция
+          a(href="#").btn.btn--filter.mb-16.mx-8.mx-lg-0 Замороженная продукция
+          a(href="#").btn.btn--filter.mb-16.mx-8.mx-lg-0 Свинина и говядина
+        .d-flex.justify-content-end
+          a(href="#").col-sm-auto.col-lg-12.btn.btn-primary.btn-primary--round Получить прайс-лист
+      .col-lg-9: .row
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-1.png',
+          name: 'Колбаса Краковская по-тавлински'
+        })
+        .col-sm-6.col-md-4.pb-24.d-flex: +card({
+          img: 'product-2.png',
+          name: 'Сардельки Тавлинские'
+        })
+  section.b-section.-leedform: .container: .row.align-items-center
+    .col-12
+      h2.mb-8.mb-lg-0 Узнайте стоимость
+    .col-md-6.mb-32.mb-md-0
+      form(action="" method="")._form
+        p.mb-24.mb-md-48 Выберите категорию продукции и напишите E-mail для отправки
+        .form-group
+          select.custom-select
+            option(value="Колбасные изделие вареные") Колбасные изделие вареные
+            option(value="Колбасные изделие вареные") Замороженная продукция
+            option(value="Колбасные изделие вареные") Свинина и говядина
+        .form-group
+          input.form-control(name="email" type="email" placeholder="E-mail" required)
+        .custom-control.custom-checkbox
+          input.custom-control-input#cc1(type="checkbox" required)
+          label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+        button(type="submit").btn.btn-primary Получить прайс-лист
+    .col-md-6: img(src="./img/img-11.jpg" alt="")
+  

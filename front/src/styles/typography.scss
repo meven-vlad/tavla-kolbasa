@@ -1,0 +1,130 @@
+// ------ headers ------
+
+%h1{
+  
+}
+%h2{
+
+}
+%h3{
+
+}
+%h4{
+
+}
+%h5{
+
+}
+%h6{
+
+}
+.h1,h1{
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 1;
+  @include media-breakpoint-down(md){
+    font-size: 48px;
+  }
+  @include media-breakpoint-down(sm){
+    font-size: 40px;
+  }
+  @include media-breakpoint-down(xs){
+    font-size: 32px;
+  }
+}
+.h2,h2{
+  font-size: 56px;
+  line-height: 1.14;
+  font-weight: bold;
+  @include media-breakpoint-down(md){
+    font-size: 42px;
+  }
+  @include media-breakpoint-down(sm){
+    font-size: 36px;
+  }
+  @include media-breakpoint-down(xs){
+    font-size: 30px;
+  }
+}
+.h3,h3{
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.25;
+  @include media-breakpoint-down(sm){
+    font-size: 30px;
+  }
+  @include media-breakpoint-down(xs){
+    font-size: 24px;
+  }
+}
+.h4,h4{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.17;
+  @include media-breakpoint-down(sm){
+    font-size: 22px;
+  }
+  @include media-breakpoint-down(xs){
+    font-size: 20px;
+  }
+}
+.h5,h5{
+
+}
+.h6,h6{
+
+}
+
+//------ text ------
+
+.fw-500{
+  font-weight: 500!important;
+}
+.fw-600{
+  font-weight: 600!important;
+}
+.fw-800{
+  font-weight: 800!important;
+}
+.fw-900{
+  font-weight: 900!important;
+}
+.p,p{
+
+}
+.p-xs{
+	
+}
+.p-sm{
+  font-size: 14px;
+  line-height: 1.43;
+}
+.p-md{
+  
+}
+.p-lg{
+  
+}
+.p-xl{
+  
+}
+
+//------ links ------
+
+a{
+  
+}
+
+//------ list ------
+
+ul{
+  
+}
+ol{
+  
+}
+
+//------ table ------
+
+
+//------ form ------

@@ -1,0 +1,60 @@
+extends ../templates/layout
+block header
+  //---
+block content
+  style.
+    body {
+      max-width: 730px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+      padding-bottom: 5px;
+      text-align: left;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    h3 a {
+      text-decoration: none;
+      color: #5179a1;
+    }
+
+    h3 small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    h3 a:hover {
+      text-decoration: underline;
+      color: #5179a1;
+    }
+
+    h3 span {
+      font-size: 12px;
+      font-style: italic;
+      padding-left: 5px;
+      color: #008c95;
+      display: inline-block;
+      text-decoration: none;
+    }
+  h1= title
+  br
+  h3: a(href="./home.html") Главная
+  h3: a(href="./about.html") О компании
+  h3: a(href="./catalog.html") Каталог
+  h3: a(href="./coop.html") Сотрудничесство
+  h3: a(href="./work.html") Трудоустройство
+block footer
+  //----

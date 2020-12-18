@@ -1,0 +1,29 @@
+html{
+  font-size: 16px;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.5;
+	min-height: 100vh;
+	min-width: 320px;
+	font-family: $font-family-base;
+  @include media-breakpoint-down(xs){
+    font-size: 14px;
+  }
+	.footer {
+		margin-top: auto;
+	}
+}
+
+.browsehappy {
+	margin: 0;
+	padding: 15px;
+	text-align: center;
+	background-color: #fff;
+	font-family: inherit;
+	color: red;
+	font-size: 16px;
+}

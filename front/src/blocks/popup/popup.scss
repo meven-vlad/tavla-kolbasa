@@ -1,0 +1,25 @@
+.popup {
+  max-width: 624px;
+  width: 100%;
+  padding: 64px 50px;
+  border-radius: 10px;
+  @include media-breakpoint-down(xs){
+    padding: 48px 16px;
+  }
+  &__form{
+    max-width: 454px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &--thx{
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    @include media-breakpoint-down(xs){
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+}

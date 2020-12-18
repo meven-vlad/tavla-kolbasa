@@ -1,0 +1,15 @@
+.b-popup
+  .text-center
+    h3 Заявка на <br>обратный звонок
+    p.mb-24.mb-md-32 Оставьте свои контактные данные, чтобы мы с вами связались
+  form(action="" method="")._form
+    .form-group
+      input.form-control(name="name" placeholder="Ваше имя" required)
+    .form-group
+      input.form-control(name="tel" type="tel" placeholder="Телефон" required data-inputmask="'mask': '+7(999)999-99-99','clearIncomplete':'true'")
+    .custom-control.custom-checkbox
+      input.custom-control-input#cc1(type="checkbox" required)
+      label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+    .text-center: button(type="submit").btn.btn-primary Отправить
+  script.
+    initMask();

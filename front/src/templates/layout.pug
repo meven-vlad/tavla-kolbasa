@@ -1,0 +1,34 @@
+doctype html
+- var title = 'Project'
+- var DIR ={js:'./js/',css:'./css/'};
+include blocks
+html(lang='ru')
+  head
+    block head
+      title #{title}
+      meta(charset='utf-8')
+      <!--[if IE]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <![endif]-->
+      // <link rel="icon" href="./favicon.ico" type="image/x-icon">
+      meta(name='viewport', content='width=device-width')
+      meta(name='format-detection', content='telephone=no')
+      meta(name='format-detection', content='address=no')
+      meta(name='keywords', content='')
+      meta(name='description', content='')
+      link(rel="stylesheet" href= DIR['css'] + 'fonts.css?rev=@@hash')
+      link(rel="stylesheet" href= DIR['css'] + 'style.css?rev=@@hash')
+  body
+    <!--[if IE < 10]>
+    <p class="browsehappy">Unfortunately, you are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank"> update your browser </a> to improve performance, quality of the displayed material, and improve security.</p>
+    <![endif]-->
+    block header
+      +header
+    main
+      block content
+    block footer
+      +footer
+    script(src= DIR['js'] + 'jquery.min.js')
+    script(src= DIR['js'] + 'plugins.js?rev=@@hash')
+    script(src= DIR['js'] + 'script.js?rev=@@hash')
+    block script

@@ -1,0 +1,93 @@
+//------------------functions
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+  @if $digits > 0 {
+    @for $i from 1 through $digits {
+      $n: $n * 10;
+    }
+  }
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  } @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  } @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+@function em($pixels, $context) {
+  @return decimal-round(($pixels / $context * 1em),4);
+}
+
+@function size-w($size,$w){
+  @return decimal-round(((100 / ($w / $size)) *1vw),4);
+}
+//----------------
+
+//---------------mixin
+@mixin placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+@mixin media-down($w){
+	@media screen and(max-width: (map_get($breakpoints,$w) - 1px)) {
+		@content
+	}
+}
+
+@mixin media-up($w){
+	@media screen and(min-width: (map_get($breakpoints,$w) + 0px)) {
+		@content
+	}
+}
+
+@mixin media-only($from,$to){
+	@media screen and(min-width: (map_get($breakpoints,$from) + 0px)) and(max-width: (map_get($breakpoints,$to) -1)) {
+		@content
+	}
+}
+
+@mixin row($gutter){
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$gutter/2;
+	margin-right: -$gutter/2;
+}
+@mixin col($columns,$gutter){
+	$d: 100/$columns;
+	$w: decimal-round($d,2) + '%';
+	width: calc(#{$w} - #{$gutter});
+	margin-left: $gutter/2;
+	margin-right: $gutter/2;
+	flex-shrink: 1;
+}
+
+@mixin object-fit {
+	@supports (object-fit: cover) {
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

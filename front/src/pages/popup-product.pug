@@ -1,0 +1,29 @@
+.b-product
+  ._row
+    ._img-wrap.pb-24
+      img(src="./img/product-big.png" alt="")
+    ._content.pb-24
+      h4.mb-8 Колбаса Краковская по-тавлински
+      .text-muted.mb-16 Вес: 150 г
+      .p-sm
+        h5.mb-0 Состав:
+        p.mb-16.
+          свинина, говядина, мясо птицы, шпик,  нитритно-посолочная смесь (соль, фиксатор окраски Е250), сахар-песок, чеснок,  пряности (перец черный, перец душистый), регулятор кислотности (Е451), усилитель вкуса и аромата (Е621)
+        h5.mb-0 Пищевая ценность в 100 г продукта (среднее значение): 
+        p.mb-16 белок—14,0 г, жир—41,0 г
+        h5.mb-0 Энергетическая ценность/калорийность:
+        p.mb-16 1926 кДж/460 ккал.
+  .px-16.px-sm-0
+    .text-center
+      h3 Получите прайс <br>по данной категории
+      p.mb-24.mb-md-32 Напишите ваше имя и E-mail, и мы пришлем прайс-лист
+    form(action="" method="")._form
+      .form-group
+        input.form-control(name="name" placeholder="Ваше имя" required)
+      .form-group
+        input.form-control(name="email" type="email" placeholder="E-mail" required)
+      .custom-control.custom-checkbox
+        input.custom-control-input#cc1(type="checkbox" required)
+        label(for="cc1").custom-control-label Я соглашаюсь на обработку персональных данных
+      .text-center: button(type="submit").btn.btn-primary Получить прайс-лист
+    

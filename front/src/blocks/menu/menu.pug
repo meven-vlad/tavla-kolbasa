@@ -1,0 +1,13 @@
+mixin menu(data)
+  nav.b-menu#menu.d-xl-block&attributes(attributes): .container.px-xl-0
+    ul
+      li: a(href="#") Каталог
+      li: a(href="#") О ТМ Тавла
+      li: a(href="#") Сотрудничество
+      li: a(href="#") Трудоустройство
+    .d-xl-none.text-center
+      .header__contacts.mb-20
+        a(href="tel:88342777454").font-weight-bold 8 (8342) 777-454
+        br
+        a(href="mailto:agr.office@yandex.ru") agr.office@yandex.ru
+      a(href='#').btn.btn-primary.px-24 Получить прайс-лист
