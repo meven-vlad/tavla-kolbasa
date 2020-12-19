@@ -21,23 +21,37 @@ $APPLICATION->SetTitle("Сотрудничество с нами");
                             ); ?>
 
                         </p>
-                        <form class="section__form" action="" method="">
-                            <div class="form-group">
-                                <input class="form-control" name="name" placeholder="Ваше имя" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" name="email" type="email" placeholder="E-mail" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="msg" placeholder="Текст сообщения"></textarea>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" id="cc1" type="checkbox" required>
-                                <label class="custom-control-label" for="cc1">Я соглашаюсь на обработку персональных
-                                    данных</label>
-                            </div>
-                            <button class="btn btn-primary" type="submit">Отправить</button>
-                        </form>
+                        <?
+                        $APPLICATION->IncludeComponent(
+                            "meven:form",
+                            "sotr",
+                            array(
+                                "COMPONENT_TEMPLATE" => "head",
+                                "IBLOCK_TYPE" => "forms",
+                                "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_form_sotr'),
+                                "SUCCESS_MESSAGE" => "Спасибо! Ваше сообщение отправлено!",
+                                "SEND_BUTTON_NAME" => "Задать вопрос",
+                                "SEND_BUTTON_CLASS" => "btn btn-primary",
+                                "DISPLAY_CLOSE_BUTTON" => "Y",
+                                "SHOW_LICENCE" => "Y",
+                                "LICENCE_TEXT" => "btn btn-primary",
+                                "CLOSE_BUTTON_NAME" => "Закрыть",
+                                "CLOSE_BUTTON_CLASS" => "btn btn-primary",
+                                "AJAX_MODE" => "N",
+                                "AJAX_OPTION_JUMP" => "N",
+                                "AJAX_OPTION_STYLE" => "Y",
+                                "AJAX_OPTION_HISTORY" => "N",
+                                "AJAX_OPTION_ADDITIONAL" => "",
+                                "CACHE_TYPE" => "A",
+                                "CACHE_TIME" => "3600",
+                                "CACHE_GROUPS" => "Y",
+                                "FORM_TITLE" => "",
+                                "HIDDEN_FIELDS" => ['SECTION'],
+                                "USE_CAPTCHA" => "N",
+                            ),
+                            false
+                        );
+                        ?>
                     </div>
                     <div class="col-lg-6 text-center text-lg-right">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/img/cat.jpg" alt="">

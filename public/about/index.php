@@ -198,34 +198,37 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
             </div>
         </div>
     </section>
-    <section class="section section--leedform">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12">
-                    <h2 class="mb-8 mb-lg-0">Остались вопросы?</h2>
-                </div>
-                <div class="col-md-6 mb-32 mb-md-0">
-                    <form class="section__form" action="" method="">
-                        <p class="mb-24 mb-md-48">Оставьте свои контактные данные, и наш менеджер свяжется с вами в ближайшее время</p>
-                        <div class="form-group">
-                            <input class="form-control" name="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" name="tel" type="tel" placeholder="Телефон" required data-inputmask="'mask': '+7(999)999-99-99','clearIncomplete':'true'">
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" id="cc1" type="checkbox" required>
-                            <label class="custom-control-label" for="cc1">Я соглашаюсь на обработку персональных данных</label>
-                        </div>
-                        <button class="btn btn-primary" type="submit" onclick="popupAjax('./popup-thx.html')">Отправить</button>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/img-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
+    <?
+    $APPLICATION->IncludeComponent(
+        "meven:form",
+        "foot",
+        array(
+            "COMPONENT_TEMPLATE" => "head",
+            "IBLOCK_TYPE" => "forms",
+            "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_form'),
+            "SUCCESS_MESSAGE" => "Спасибо! Ваше сообщение отправлено!",
+            "SEND_BUTTON_NAME" => "Задать вопрос",
+            "SEND_BUTTON_CLASS" => "btn btn-primary",
+            "DISPLAY_CLOSE_BUTTON" => "Y",
+            "SHOW_LICENCE" => "Y",
+            "LICENCE_TEXT" => "btn btn-primary",
+            "CLOSE_BUTTON_NAME" => "Закрыть",
+            "CLOSE_BUTTON_CLASS" => "btn btn-primary",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "3600",
+            "CACHE_GROUPS" => "Y",
+            "FORM_TITLE" => "",
+            "HIDDEN_FIELDS" => ['SECTION'],
+            "USE_CAPTCHA" => "N",
+        ),
+        false
+    );
+    ?>
     <div class="map">
         <div class="container position-relative">
             <div class="map__panel">

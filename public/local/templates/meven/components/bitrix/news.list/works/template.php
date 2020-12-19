@@ -18,7 +18,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             <?php foreach ($arResult['ITEMS'] as $key=>$item):?>
                 <div class="tab-pane fade <?=($key == 0 ? 'active show' : '')?>" id="cv<?=$item['ID']?>">
                     <div class="panel">
-                        <h4><?=$item['NAME']?></h4>
+                        <h4><?=$item['PROPERTIES']['TITLE']['VALUE']?></h4>
                         <br>
                         <p><?=$item['PREVIEW_TEXT']?></p>
                     </div>

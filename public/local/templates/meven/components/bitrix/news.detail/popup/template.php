@@ -20,27 +20,36 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             </div>
         </div>
     </div>
-    <div class="px-16 px-sm-0">
-        <div class="text-center">
-            <h3>Получите прайс
-                <br>по данной категории
-            </h3>
-            <p class="mb-24 mb-md-32">Напишите ваше имя и E-mail, и мы пришлем прайс-лист</p>
-        </div>
-        <form class="product__form" action="" method="">
-            <div class="form-group">
-                <input class="form-control" name="name" placeholder="Ваше имя" required="required" />
-            </div>
-            <div class="form-group">
-                <input class="form-control" name="email" type="email" placeholder="E-mail" required="required" />
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input class="custom-control-input" id="cc1" type="checkbox" required="required" />
-                <label class="custom-control-label" for="cc1">Я соглашаюсь на обработку персональных данных</label>
-            </div>
-            <div class="text-center">
-                <button class="btn btn-primary" type="submit">Получить прайс-лист</button>
-            </div>
-        </form>
-    </div>
+    <?
+    $APPLICATION->IncludeComponent(
+        "meven:form",
+        "detail",
+        array(
+            "COMPONENT_TEMPLATE" => "head",
+            "IBLOCK_TYPE" => "forms",
+            "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_form'),
+            "SUCCESS_MESSAGE" => "Спасибо! Ваше сообщение отправлено!",
+            "SEND_BUTTON_NAME" => "Задать вопрос",
+            "SEND_BUTTON_CLASS" => "btn btn-primary",
+            "DISPLAY_CLOSE_BUTTON" => "Y",
+            "SHOW_LICENCE" => "Y",
+            "LICENCE_TEXT" => "btn btn-primary",
+            "CLOSE_BUTTON_NAME" => "Закрыть",
+            "CLOSE_BUTTON_CLASS" => "btn btn-primary",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "CACHE_TYPE" => "A",
+            "CACHE_TIME" => "3600",
+            "CACHE_GROUPS" => "Y",
+            "FORM_TITLE" => "",
+            "HIDDEN_FIELDS" => ['SECTION'],
+            "USE_CAPTCHA" => "N",
+        ),
+        false
+    );
+    ?>
+
 </div>
