@@ -2,38 +2,77 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 ?>
 <main>
-        <section class="front">
-            <div id="front-slider">
-                <div class="front__slide" style="background-image:url(./img/slide-1.jpg)">
-                    <div class="container">
-                        <div class="front__content">
-                            <h1 class="mb-24 mb-md-56">Тавла - то что
-                                <br>мы едим
-                            </h1>
-                            <a class="btn btn-primary" href="">Скачать презентацию</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="front__slide text-body" style="background-image:url(./img/slide-2.jpg)">
-                    <div class="container">
-                        <div class="front__content">
-                            <h1 class="mb-24 mb-md-56">Тавла - то что
-                                <br>мы едим
-                            </h1>
-                            <a class="btn btn-primary" href="">Скачать презентацию</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="front__slide" style="background-image:url(./img/slide-3.jpg)">
-                    <div class="container">
-                        <div class="front__content">
-                            <h1 class="mb-24 mb-md-56">Тавла - то что
-                                <br>мы едим
-                            </h1>
-                            <a class="btn btn-primary" href="">Скачать презентацию</a>
-                        </div>
-                    </div>
-                </div>
+    <section class="front">
+        <?php
+        $APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"banner", 
+	array(
+		"COMPONENT_TEMPLATE" => "banner",
+		"IBLOCK_TYPE" => "info",
+		"IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_banner-top'),
+		"NEWS_COUNT" => "200",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER2" => "ASC",
+		"FILTER_NAME" => "",
+		"FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "NADPIS_NA_SSYLKE",
+			1 => "SSYLKA",
+			2 => "",
+		),
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"CACHE_TYPE" => "A",
+		"CACHE_TIME" => "36000000",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"SET_TITLE" => "Y",
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"STRICT_SECTION_CHECK" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"PAGER_TEMPLATE" => ".default",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SET_STATUS_404" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => ""
+	),
+	false
+);
+        ?>
             </div>
             <div class="container position-relative">
                 <div class="front__nav" id="front-nav">
@@ -50,179 +89,225 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         </section>
         <section class="section w-100 overflow-hidden mb-24 mb-lg-92" id="about">
             <div class="container">
-                <div class="section__bg-title">
-                    <div class="row align-items-center mb-40">
-                        <div class="col-lg-6 mb-36">
-                            <h2 class="mb-24 mb-xl-40">О бренде</h2>
-                            <p class="mb-0">Мы в компании «Агрика» после 13 лет успешной работы на колбасном рынке в качестве дистрибьютора различных марок и производителей решили в дополнение заняться изготовлением собственной мясной и колбасной продукции.</p>
-                        </div>
-                        <div class="col-lg-6 text-center">
-                            <img src="./img/img-2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="row align-items-center mb-40 mb-lg-128">
-                    <div class="col-lg-6 text-center order-1 order-lg-0">
-                        <img src="./img/img-3.jpg" alt="">
-                    </div>
-                    <div class="col-lg-6 mb-36">
-                        <h2 class="mb-24 mb-xl-40">Наш опыт</h2>
-                        <p class="mb-0">Используя свой опыт, мы делаем продукцию под торговой маркой «Тавла». Производство осуществляется ООО «Араповская мясная мануфактура», входящим в группу компаний ООО «Агрика». Производство расположено в городе Ковылкино Республики Мордовия.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 pb-40 d-flex">
-                        <div class="privilege">
-                            <img class="privilege__ic mb-16" src="./img/p-1.svg" alt="">
-                            <div class="privilege__title h4 mb-8">Миссия компании</div>
-                            <div class="privilege__text">Улучшение качества жизни</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 pb-40 d-flex">
-                        <div class="privilege">
-                            <img class="privilege__ic mb-16" src="./img/p-2.svg" alt="">
-                            <div class="privilege__title h4 mb-8">Стратегия</div>
-                            <div class="privilege__text">Делать продукт с качеством немного выше цены</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 pb-40 d-flex">
-                        <div class="privilege">
-                            <img class="privilege__ic mb-16" src="./img/p-3.svg" alt="">
-                            <div class="privilege__title h4 mb-8">Принципы</div>
-                            <div class="privilege__text">Развитие, улучшение, доступность</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 pb-40 d-flex">
-                        <div class="privilege">
-                            <img class="privilege__ic mb-16" src="./img/p-4.svg" alt="">
-                            <div class="privilege__title h4 mb-8">Ценности</div>
-                            <div class="privilege__text">Человек, его потребности и безопасность</div>
-                        </div>
-                    </div>
-                </div>
+            <?php
+            $APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "block-main",
+                array(
+                    "COMPONENT_TEMPLATE" => "banner",
+                    "IBLOCK_TYPE" => "info",
+                    "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_block-on-main'),
+                    "NEWS_COUNT" => "200",
+                    "SORT_BY1" => "ACTIVE_FROM",
+                    "SORT_ORDER1" => "DESC",
+                    "SORT_BY2" => "SORT",
+                    "SORT_ORDER2" => "ASC",
+                    "FILTER_NAME" => "",
+                    "FIELD_CODE" => array(
+                        0 => "ID",
+                        1 => "CODE",
+                        2 => "XML_ID",
+                        3 => "DETAIL_PICTURE",
+                    ),
+                    "PROPERTY_CODE" => array(
+                        0 => "NADPIS_NA_SSYLKE",
+                        1 => "SSYLKA",
+                        2 => "",
+                    ),
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_FILTER" => "N",
+                    "CACHE_GROUPS" => "Y",
+                    "PREVIEW_TRUNCATE_LEN" => "",
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "SET_TITLE" => "Y",
+                    "SET_BROWSER_TITLE" => "Y",
+                    "SET_META_KEYWORDS" => "Y",
+                    "SET_META_DESCRIPTION" => "Y",
+                    "SET_LAST_MODIFIED" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                    "ADD_SECTIONS_CHAIN" => "Y",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "PARENT_SECTION" => "",
+                    "PARENT_SECTION_CODE" => "",
+                    "INCLUDE_SUBSECTIONS" => "Y",
+                    "STRICT_SECTION_CHECK" => "N",
+                    "DISPLAY_DATE" => "Y",
+                    "DISPLAY_NAME" => "Y",
+                    "DISPLAY_PICTURE" => "Y",
+                    "DISPLAY_PREVIEW_TEXT" => "Y",
+                    "PAGER_TEMPLATE" => ".default",
+                    "DISPLAY_TOP_PAGER" => "N",
+                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                    "PAGER_TITLE" => "Новости",
+                    "PAGER_SHOW_ALWAYS" => "N",
+                    "PAGER_DESC_NUMBERING" => "N",
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    "PAGER_SHOW_ALL" => "N",
+                    "PAGER_BASE_LINK_ENABLE" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SHOW_404" => "N",
+                    "MESSAGE_404" => ""
+                ),
+                false
+            );
+            ?>
+            <?php
+            $APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "features-main",
+                array(
+                    "COMPONENT_TEMPLATE" => "banner",
+                    "IBLOCK_TYPE" => "info",
+                    "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_features-on-main'),
+                    "NEWS_COUNT" => "200",
+                    "SORT_BY1" => "ACTIVE_FROM",
+                    "SORT_ORDER1" => "DESC",
+                    "SORT_BY2" => "SORT",
+                    "SORT_ORDER2" => "ASC",
+                    "FILTER_NAME" => "",
+                    "FIELD_CODE" => array(
+                        0 => "ID",
+                        1 => "CODE",
+                        2 => "XML_ID",
+                        3 => "",
+                    ),
+                    "PROPERTY_CODE" => array(
+                        0 => "PICTURE",
+                        1 => "SSYLKA",
+                        2 => "",
+                    ),
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "",
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_FILTER" => "N",
+                    "CACHE_GROUPS" => "Y",
+                    "PREVIEW_TRUNCATE_LEN" => "",
+                    "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                    "SET_TITLE" => "Y",
+                    "SET_BROWSER_TITLE" => "Y",
+                    "SET_META_KEYWORDS" => "Y",
+                    "SET_META_DESCRIPTION" => "Y",
+                    "SET_LAST_MODIFIED" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                    "ADD_SECTIONS_CHAIN" => "Y",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "PARENT_SECTION" => "",
+                    "PARENT_SECTION_CODE" => "",
+                    "INCLUDE_SUBSECTIONS" => "Y",
+                    "STRICT_SECTION_CHECK" => "N",
+                    "DISPLAY_DATE" => "Y",
+                    "DISPLAY_NAME" => "Y",
+                    "DISPLAY_PICTURE" => "Y",
+                    "DISPLAY_PREVIEW_TEXT" => "Y",
+                    "PAGER_TEMPLATE" => ".default",
+                    "DISPLAY_TOP_PAGER" => "N",
+                    "DISPLAY_BOTTOM_PAGER" => "Y",
+                    "PAGER_TITLE" => "Новости",
+                    "PAGER_SHOW_ALWAYS" => "N",
+                    "PAGER_DESC_NUMBERING" => "N",
+                    "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                    "PAGER_SHOW_ALL" => "N",
+                    "PAGER_BASE_LINK_ENABLE" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SHOW_404" => "N",
+                    "MESSAGE_404" => ""
+                ),
+                false
+            );
+            ?>
+
+
             </div>
         </section>
         <section class="section mb-48 mb-md-64 mb-lg-112">
             <div class="container">
                 <h2 class="text-center mb-24 mb-md-32">Каталог</h2>
-                <div class="carousel">
-                    <div class="js-carousel-card">
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-1.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Колбаса Краковская по-тавлински</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-2.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Сардельки Тавлинские</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-1.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Колбаса Краковская по-тавлински</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-2.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Сардельки Тавлинские</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-1.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Колбаса Краковская по-тавлински</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel__item">
-                            <div class="card">
-                                <a class="card__img-wrap" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                    <img src="./img/product-2.png" alt="">
-                                </a>
-                                <div class="card__panel">
-                                    <a class="card__name" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">Сардельки Тавлинские</a>
-                                    <ul class="card__opt">
-                                        <li>Пищевая ценность в 100 г продукта: белок - 14,0 г., жир -41,0г</li>
-                                        <li>Энергетическая ценность/калорийность: 1926 кДж/460 ккал.</li>
-                                    </ul>
-                                    <a class="card__more text-primary" href="./popup-product.html" data-fancybox data-type="ajax" data-touch="false" data-auto-focus="false">
-                                        Подробнее <svg class="ml-8" width="9" height="14" viewBox="0 0 9 14" fill="none">
-                                            <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $APPLICATION->IncludeComponent(
+                    "bitrix:news.list",
+                    "catalog-main",
+                    array(
+                        "COMPONENT_TEMPLATE" => "banner",
+                        "IBLOCK_TYPE" => "info",
+                        "IBLOCK_ID" => \Bitrix\Main\Config\Option::get('meven.info', 'iblock_catalog'),
+                        "NEWS_COUNT" => "200",
+                        "SORT_BY1" => "ACTIVE_FROM",
+                        "SORT_ORDER1" => "DESC",
+                        "SORT_BY2" => "SORT",
+                        "SORT_ORDER2" => "ASC",
+                        "FILTER_NAME" => "",
+                        "FIELD_CODE" => array(
+                            0 => "ID",
+                            1 => "CODE",
+                            2 => "XML_ID",
+                            3 => "",
+                        ),
+                        "PROPERTY_CODE" => array(
+                            0 => "WEIGHT",
+                            1 => "STRUCTURE",
+                            2 => "PISH_VAL",
+                            3 => "CALLOR",
+                        ),
+                        "CHECK_DATES" => "Y",
+                        "DETAIL_URL" => "",
+                        "AJAX_MODE" => "N",
+                        "AJAX_OPTION_JUMP" => "N",
+                        "AJAX_OPTION_STYLE" => "Y",
+                        "AJAX_OPTION_HISTORY" => "N",
+                        "AJAX_OPTION_ADDITIONAL" => "",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => "36000000",
+                        "CACHE_FILTER" => "N",
+                        "CACHE_GROUPS" => "Y",
+                        "PREVIEW_TRUNCATE_LEN" => "",
+                        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                        "SET_TITLE" => "Y",
+                        "SET_BROWSER_TITLE" => "Y",
+                        "SET_META_KEYWORDS" => "Y",
+                        "SET_META_DESCRIPTION" => "Y",
+                        "SET_LAST_MODIFIED" => "N",
+                        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                        "ADD_SECTIONS_CHAIN" => "Y",
+                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                        "PARENT_SECTION" => "",
+                        "PARENT_SECTION_CODE" => "",
+                        "INCLUDE_SUBSECTIONS" => "Y",
+                        "STRICT_SECTION_CHECK" => "N",
+                        "DISPLAY_DATE" => "Y",
+                        "DISPLAY_NAME" => "Y",
+                        "DISPLAY_PICTURE" => "Y",
+                        "DISPLAY_PREVIEW_TEXT" => "Y",
+                        "PAGER_TEMPLATE" => ".default",
+                        "DISPLAY_TOP_PAGER" => "N",
+                        "DISPLAY_BOTTOM_PAGER" => "Y",
+                        "PAGER_TITLE" => "Новости",
+                        "PAGER_SHOW_ALWAYS" => "N",
+                        "PAGER_DESC_NUMBERING" => "N",
+                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                        "PAGER_SHOW_ALL" => "N",
+                        "PAGER_BASE_LINK_ENABLE" => "N",
+                        "SET_STATUS_404" => "N",
+                        "SHOW_404" => "N",
+                        "MESSAGE_404" => ""
+                    ),
+                    false
+                );
+                ?>
+
             </div>
         </section>
         <section class="section section--leedform">

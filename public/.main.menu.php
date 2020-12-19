@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Каталог", 
+		"/", 
+		Array(), 
+		Array("IBLOCK"=>"1"), 
+		"" 
+	),
+	Array(
+		"О ТМ тавла", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сотрудничество", 
+		"/news/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Трудоустройство", 
+		"//", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

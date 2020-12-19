@@ -61,7 +61,7 @@ class Props
         $this->iblock = $iblock;
         $this->name = $name;
 
-        $arParams = ["replace_space" => "-", "replace_other" => "-"];
+        $arParams = ["replace_space" => "_", "replace_other" => "_"];
         $this->code = strtoupper(\Cutil::translit($this->name, "ru", $arParams));
     }
 

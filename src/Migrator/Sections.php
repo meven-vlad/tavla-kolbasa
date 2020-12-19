@@ -1,9 +1,80 @@
 <?php
+
 namespace Meven\Migrator;
 
 
 class Sections
 {
+    /**
+     * @var \CIBlockSection
+     */
+    private $sec;
+    /**
+     * @var string
+     */
+    public $active;
+    /**
+     * @var id
+     */
+    private $iblock;
+    /**
+     * @var string
+     */
+    private $name;
+    /**
+     * @var false
+     */
+    public $iblocksectionid;
+    /**
+     * @var string
+     */
+    public $description;
+    /**
+     * @var string
+     */
+    public $code;
+
+    /**
+     * Sections constructor.
+     * @param int $iblock
+     * @param string $name
+     */
+    public function __construct(int $iblock, string $name)
+    {
+        $this->active = 'Y';
+        $this->iblock = $iblock;
+        $this->name = $name;
+        $this->iblocksectionid = false;
+        $this->description = '';
+
+        $arParams = ["replace_space" => "_", "replace_other" => "_"];
+        $this->code = strtoupper(\Cutil::translit($this->name, "ru", $arParams));
+    }
+
+    /**
+     * @return array
+     */
+    public function getFromArray(): array
+    {
+        return [
+            "ACTIVE" => $this->active,
+            "IBLOCK_SECTION_ID" => $this->iblocksectionid,
+            "IBLOCK_ID" => $this->iblock,
+            "CODE" => $this->code,
+            "NAME" => $this->name,
+            "SORT" => 500,
+            "DESCRIPTION" => $this->description,
+        ];
+    }
+
+    public static function create(array $section)
+    {
+        \Bitrix\Main\Loader::includeModule('iblock');
+        $sec = new \CIBlockSection;
+
+        return $sec->Add($section);
+    }
+
     /**
      * @param string $name
      * @param string $siteid
