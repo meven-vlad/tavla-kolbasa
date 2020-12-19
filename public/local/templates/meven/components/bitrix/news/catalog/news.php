@@ -17,13 +17,20 @@ $this->setFrameMode(true);
 		<div class="row">
 			<div class="col-lg-3 pb-32 pb-lg-24">
 				<div class="position-sticky" style="top: 30px">
+
 					<h1 class="h4 text-secondary mb-20 mb-xl-36">Категории</h1>
-					<div class="row mx-n8 mx-lg-0 flex-lg-column pb-lg-32">
-						<a class="btn btn--filter mb-16 mx-8 mx-lg-0 is-active" href="#">Все</a>
-						<a class="btn btn--filter mb-16 mx-8 mx-lg-0" href="#">Колбасная продукция</a>
-						<a class="btn btn--filter mb-16 mx-8 mx-lg-0" href="#">Замороженная продукция</a>
-						<a class="btn btn--filter mb-16 mx-8 mx-lg-0" href="#">Свинина и говядина</a>
-					</div>
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:catalog.section.list",
+						"catalog",
+						Array(
+							"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+							"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+							"NEWS_COUNT" => $arParams["NEWS_COUNT"],
+						),
+						$component
+					);
+					?>
+
 					<div class="d-flex justify-content-end">
 						<a class="col-sm-auto col-lg-12 btn btn-primary btn-primary--round" href="#">Получить прайс-лист</a>
 					</div>

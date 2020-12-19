@@ -48,7 +48,7 @@ class Sections
         $this->description = '';
 
         $arParams = ["replace_space" => "_", "replace_other" => "_"];
-        $this->code = strtoupper(\Cutil::translit($this->name, "ru", $arParams));
+        $this->code = \Cutil::translit($this->name, "ru", $arParams);
     }
 
     /**
