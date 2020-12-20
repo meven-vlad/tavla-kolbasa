@@ -75,7 +75,7 @@ $path = $APPLICATION->GetCurPage(false);
                     <br>
                     <a href="mailto:<?=Option::get('meven.info', 'email')?>"><?=Option::get('meven.info', 'email')?></a>
                 </div>
-                <a class="btn btn-primary px-24 d-none d-md-inline-block" href="./popup-callme.html" data-fancybox data-type="ajax" data-touch="false">Получить прайс-лист</a>
+                <a class="btn btn-primary px-24 d-none d-md-inline-block" href="/local/ajax/forms/head.php" data-fancybox data-type="ajax" data-touch="false">Получить прайс-лист</a>
             </div>
         </div>
     </header>
